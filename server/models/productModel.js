@@ -1,20 +1,22 @@
-const mongoose=require('mongoose');
+const { client } = require('../config/connectDatabase');
 
-const productSchema=new mongoose.Schema({
-    name:String,
-    price:  Number,
-    description:String,
-    ratings:Number,
-    images:[{
-        image:String
-    }],
-    category:String,
-    seller:String,
-    stock:Number,
-    numberOfReviews:Number,
-    createdAt:Date
-});
+const miniEcommerce = client.db("mini-ecommerce")
 
-const productModel=mongoose.model('Product',productSchema);
+const productCollection = miniEcommerce.collection("product")
 
-module.exports=productModel;
+// const productSchema = new mongoose.Schema({
+//     name: String,
+//     price: Number,
+//     description: String,
+//     ratings: Number,
+//     images: [{
+//         image: String
+//     }],
+//     category: String,
+//     seller: String,
+//     stock: Number,
+//     numberOfReviews: Number,
+//     createdAt: Date
+// });
+
+module.exports = productCollection;
