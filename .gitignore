@@ -5,4 +5,4 @@ node_modules/
 /client/.env
 
 # Ignore config folder inside server
-/server/config/
+/server/config/config.env
