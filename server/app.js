@@ -22,8 +22,8 @@ app.use(cors({
     credentials: true
 }));
 
-app.use('/', products);
-app.use('/', orders);
+app.use('/api/v1/', products);
+app.use('/api/v1', orders);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server listening to port ${process.env.PORT} in ${process.env.NODE_ENV}`);
